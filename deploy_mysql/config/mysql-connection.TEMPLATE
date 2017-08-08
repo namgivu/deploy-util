@@ -1,0 +1,4 @@
+[client]
+host      = YOUR_DB_HOST
+user      = YOUR_DB_USER
+password  = YOUR_DB_PASS

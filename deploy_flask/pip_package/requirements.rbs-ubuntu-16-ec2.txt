@@ -1,0 +1,28 @@
+Flask==0.10.1
+Flask-SQLAlchemy==1.0
+boto
+#TODO boto3 to replace boto
+bcrypt
+mechanize
+bs4
+pygeocoder
+pubnub==3.8.2
+python-firebase
+Flask-JWT
+Pillow==3.3.0
+simplejson
+Flask-Bootstrap
+Flask-WTF
+PbPython
+stripe
+PyMySQL
+flask-cors
+python-gcm
+email_validator
+opentok
+
+#region testing
+Flask-Testing
+nose
+mock
+#endregion testing
