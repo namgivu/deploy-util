@@ -1,0 +1,25 @@
+Docker container info
+  container name : autotest
+  ssh info: host = localhost
+             key = http://localhost/enuj.113/docker-ssh_22000_autotest_447199
+            port = 22000
+
+    docker-ssh container name : docker-ssh_22000_autotest
+  docker-rsync container name : docker-rsync_18000_autotest
+
+
+
+#Autorun s04b_print_node.py... BEGIN
+
+
+#ssh command syntax
+keyUrl="http://localhost/enuj.113/docker-ssh_22000_autotest_447199" ; keyFile=$(mktemp) ; wget -O $keyFile -q $keyUrl #download key from S3
+ssh -p 22000 -i $keyFile -o "StrictHostKeyChecking no" seluser@localhost
+
+
+#rsync command syntax
+export ENUJ_RSYNC_FROM=YOUR_LOCAL_PATH #what to rsync from your local files/folders
+export ENUJ_RSYNC_TO=YOUR_SUB_PATH_UNDER_REMOTE_HOME #rsync to sub-folder under remote home /home/seluser
+rsync -chazkP $ENUJ_RSYNC_FROM rsync://localhost:18000/volume/$ENUJ_RSYNC_TO #do rsync
+rsync rsync://localhost:18000/volume/$ENUJ_RSYNC_TO #aftermath check i.e. remote folder listing
+
