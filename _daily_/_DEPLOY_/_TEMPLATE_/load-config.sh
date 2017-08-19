@@ -2,7 +2,7 @@
 
 #get SCRIPT_HOME=executed script's path, containing folder, cd & pwd to get container path
 s=$BASH_SOURCE ; s=$(dirname "$s") ; s=$(cd "$s" && pwd) ; SCRIPT_HOME=$s
-d="$SCRIPT_HOME/.." ; d=$(cd "$d" && pwd) ; __DEPLOY__=$d
+d="$SCRIPT_HOME/../.." ; d=$(cd "$d" && pwd) ; __DEPLOY__=$d
 
 #load common setting
   source "$__DEPLOY__/common.sh"
