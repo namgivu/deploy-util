@@ -19,13 +19,16 @@ echo "
     redis-cli
 
     #test connectivity at prompt
-    ping   #result pong
+    ping
+      #result pong
 
     #check ability to set keys
-    set test 122  #result ok
+    set test 122
+      #result ok
 
     #check get the key just set
-    get test  #result 122
+    get test
+      #result 122
 
     #exit redis
     exit
