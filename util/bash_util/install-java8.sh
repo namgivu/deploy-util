@@ -13,3 +13,6 @@ sudo apt-get install -y default-jdk
   :: sudo nano /etc/environment #set JAVA_HOME="/usr/PATH/TO/YOUR/JDK"
 
 #endregion
+
+#aftermath check
+echo ; java -version
