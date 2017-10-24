@@ -126,6 +126,7 @@ _daily_/_DEPLOY_/voiv.STAGING
 _daily_/_DEPLOY_/django-start.STAGING
 _daily_/_DEPLOY_/itzoi.STAGING
 _daily_/_DEPLOY_/instafun.STAGING
+_daily_/_DEPLOY_/lsc.STAGING
 
 deploy_mysql/config/s3_key.py
 deploy_flask/config/frontend-react/webpack.config.js
@@ -142,3 +143,7 @@ _daily_/_DEPLOY_/_TEMPLATE_/autotest_util/_shared_
 deploy_django/config/config_local*.py
 
 ##endregion git ignore by deploy_util
+
+.idea/.idea/misc.xml
+.idea/.idea/modules.xml
+.idea/.idea/workspace.xml
