@@ -6,7 +6,7 @@
 #install java 8
 sudo apt update
 sudo apt install -y openjdk-8-jdk
-sudo apt install -y openjdk-8-source #this is optional, the jdk source code
+sudo apt install -y openjdk-8-source #this is optional, the jdk source code - you may need this to understand jdk lib's function param/meaning
 
 #region config java (optional)
 
