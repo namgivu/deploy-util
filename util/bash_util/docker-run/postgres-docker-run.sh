@@ -2,7 +2,7 @@
 
 : #ref. https://hub.docker.com/_/postgres/
 
-SERVICE='postgresql'
+SERVICE='postgresql' #ref. https://askubuntu.com/q/642259/22308
 POSTGRES_PASSWORD='postgres'
 POSTGRES_USER='postgres'
 
