@@ -35,4 +35,4 @@ sudo mkdir -p /data/db && sudo chmod 777 /data/db && \
 #aftermath check
 # sudo systemctl status mongodb
 
-#TODO cannot install 3.x for Ubuntu 16
+#TODO cannot install 3.x for Ubuntu 16 -> use docker-run instead ref. https://github.com/namgivu/deploy-util/blob/master/util/bash_util/docker-run/mongodb-docker-run.sh
