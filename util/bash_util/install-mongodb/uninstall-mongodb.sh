@@ -4,5 +4,4 @@
 
 sudo apt purge -y mongodb-org* && \
   sudo rm -rf /var/log/mongodb && \
-  sudo rm -rf /var/lib/mongodb && \
-  sudo rm -rf /data/db
+  sudo rm -rf /var/lib/mongodb 
