@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-: #install MongoDb on Ubuntu 16
+: #install MongoDb on Ubuntu 16.04
 
 #init sudo
 sudo echo 'Need sudo to run this file'
