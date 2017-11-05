@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-: #ref. https://hub.docker.com/_/postgres/
+: #ref. https://hub.docker.com/_/mongo/
 
 SERVICE='mongod' #ref. https://stackoverflow.com/a/11776728/248616
 
