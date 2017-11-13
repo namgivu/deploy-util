@@ -5,6 +5,8 @@ sh="
 "
 eval $sh
 
+#TODO the difference between sudo apt-get upgrade and sudo apt-get install https://askubuntu.com/q/975968/22308
+
 echo "
 $sh
 "
