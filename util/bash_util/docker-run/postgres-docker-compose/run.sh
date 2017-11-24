@@ -15,4 +15,6 @@ note="
 after container run, we can use 'psql' via
 local-machine $ docker exec -it $CONTAINER_NAME bash #ref. https://askubuntu.com/a/507009/22308
 in-container  # psql -U $POSTGRES_USER
+in-container  # psql -U postgres #often this user is used
+
 "
