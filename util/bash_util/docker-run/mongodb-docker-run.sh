@@ -7,7 +7,7 @@ SERVICE='mongod' #ref. https://stackoverflow.com/a/11776728/248616
 REGISTRY='mongo'
 IMAGE="${REGISTRY}:latest"
 PORT=27017
-CONTAINER_NAME='mongo_latest'
+CONTAINER_NAME='mongo'
 DATA_FILE="$HOME/mongodb-data"
 
 sudo echo 'sudo initiated'
