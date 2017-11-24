@@ -19,10 +19,13 @@ docker run \
   -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} \
   --name ${CONTAINER_NAME} ${IMAGE}
 
+
+: #aftermath note
 note="
 after container run, we can use 'psql' via
-local-machine $ docker exec -it $CONTAINER_NAME bash
+local-machine $ docker exec -it $CONTAINER_NAME bash #ref. https://askubuntu.com/a/507009/22308
 in-container  # psql -U $POSTGRES_USER
 "
 
-#TODO How to keep data remained for later 'docker run'?
+#How to keep data remained for later 'docker run'?
+# -> Use docker-compose at $CODE/util/bash_util/docker-run/postgres-docker-compose/
