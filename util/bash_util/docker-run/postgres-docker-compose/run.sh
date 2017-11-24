@@ -6,7 +6,7 @@ s=${BASH_SOURCE[0]} ; s=`dirname $s` ; SCRIPT_HOME=`cd $s ; pwd`
 CONTAINER_PREFIX=$1
 
 : #main
-docker-compose -f "$SCRIPT_HOME/docker-compose.yml" -p "$CONTAINER_PREFIX" up
+docker-compose -f "$SCRIPT_HOME/docker-compose.yml" -p "$CONTAINER_PREFIX" up #ref. https://forums.docker.com/t/named-volume-with-postgresql-doesnt-keep-databases-data/7434/2
 
 : #aftermath note
 CONTAINER_NAME="${CONTAINER_PREFIX}_postgres_1"
