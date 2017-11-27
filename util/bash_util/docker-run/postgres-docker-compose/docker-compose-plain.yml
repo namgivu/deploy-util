@@ -2,7 +2,7 @@ version: '2.0'
 services:
   postgres:
     restart: always
-    image: mdillon/postgis
+    image: postgres:latest
     volumes:
       - dbdatavol:/var/lib/postgresql/data
     ports:
