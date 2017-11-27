@@ -6,7 +6,9 @@ s=${BASH_SOURCE[0]} ; s=`dirname $s` ; SCRIPT_HOME=`cd $s ; pwd`
 CONTAINER_PREFIX=$1
 
 : #main
-docker-compose -f "$SCRIPT_HOME/docker-compose.yml" -p "$CONTAINER_PREFIX" up #ref. https://forums.docker.com/t/named-volume-with-postgresql-doesnt-keep-databases-data/7434/2
+docker-compose -f "$SCRIPT_HOME/docker-compose.yml" -p "$CONTAINER_PREFIX" rm -f #remove previous container if any ref. https://stackoverflow.com/a/32618288/248616
+docker-compose -f "$SCRIPT_HOME/docker-compose.yml" -p "$CONTAINER_PREFIX" up --force-recreate #ref. https://forums.docker.com/t/named-volume-with-postgresql-doesnt-keep-databases-data/7434/2
+#docker-compose -f "$SCRIPT_HOME/docker-compose.yml" -p "$CONTAINER_PREFIX" --verbose up --force-recreate #use this version for verbose/debug
 
 : #aftermath note
 CONTAINER_NAME="${CONTAINER_PREFIX}_postgres_1"
