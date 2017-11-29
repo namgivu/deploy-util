@@ -8,7 +8,7 @@ REGISTRY='mongo'
 IMAGE="${REGISTRY}:latest"
 PORT=27017
 CONTAINER_NAME='mongo'
-DATA_FILE="$HOME/mongodb-data"
+DATA_FILE="$HOME/mongo-data"
 
 sudo echo 'sudo initiated'
 sudo service ${SERVICE} stop #stop any local $SERVICE so that our docker $SERVICE will override its port
