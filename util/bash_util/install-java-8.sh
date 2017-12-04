@@ -14,10 +14,10 @@ sudo apt install -y openjdk-8-source #this is optional, the jdk source code - yo
   : sudo update-alternatives --config java
 
   #config java e.g. JAVA_HOME ref. https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04#setting-the-java_home-environment-variable
-  : sudo nano /etc/environment  #set JAVA_HOME="/usr/PATH/TO/YOUR/JDK" e.g. JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
   ls -la `which java`           #get /usr/bin/java -> /etc/alternatives/java
   ls -la /etc/alternatives/java #get /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -> JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
-
+  : sudo nano /etc/environment  #set JAVA_HOME="/usr/PATH/TO/YOUR/JDK" e.g. JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
+  : nano $HOME/.bashrc #add line `source /etc/environment` ref. https://askubuntu.com/a/175547/22308
 
 #endregion
 
