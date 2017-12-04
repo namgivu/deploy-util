@@ -39,7 +39,7 @@ sudo docker --version
 
   #create user group docker and add current user to it
   sudo groupadd docker
-  sudo usermod -aG docker $USER
+  sudo usermod -aG docker "$USER"
 
   #prompt to log out and log in again
   echo "
