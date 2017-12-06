@@ -26,3 +26,8 @@ docker start ${RABBITMQ_NAME}
 #remove the container - data is ensured to persist via volume mapping '-v /docker-data/rabbitmq1/data:/var/lib/rabbitmq' ref. https://github.com/docker-library/rabbitmq/issues/106#issuecomment-241882358
 docker rm ${RABBITMQ_NAME}
 
+: #mornitor rabbitmq
+
+  #list queue
+  : sudo rabbitmqctl list_queues #local version
+  sh='rabbitmqctl list_queues' && docker exec -it "$RABBITMQ_NAME" ${sh}
