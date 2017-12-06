@@ -13,7 +13,9 @@ docker run -d \
   -e RABBITMQ_DEFAULT_USER=${RABBITMQ_USER} \
   -e RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS} \
   -v /docker-data/rabbitmq1/data:/var/lib/rabbitmq \
-  -p 15672:15672 ${DOCKER_IMAGE}
+  -p 15672:15672 \
+  -p 5672:5672 \
+  ${DOCKER_IMAGE}
 
 docker logs ${RABBITMQ_NAME} #verify it running good
 
