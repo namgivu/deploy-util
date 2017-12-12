@@ -47,12 +47,12 @@ for REPO in ${REPOS}; do
 done
 
 #output printing
-echo && echo "Found local branches" #TODO how to print length of $UNPUSHED_BRANCHES; this not working #echo && echo "Found local branches (${#UNPUSHED_BRANCHES[@]} found)"
+echo && echo "Found local branches (${#UNPUSHED_BRANCHES[@]} found)" #array length ref. https://unix.stackexchange.com/a/193042/17671
 for b in "${UNPUSHED_BRANCHES[@]}"; do
   echo "$b"
 done
 
-echo && echo "Found local commits" #TODO how to print length of $UNPUSHED_COMMITS; as above
+echo && echo "Found local commits (${#UNPUSHED_COMMITS[@]} found)" #array length ref. https://unix.stackexchange.com/a/193042/17671
 for c in "${UNPUSHED_COMMITS[@]}"; do
   echo "$c"
 done
