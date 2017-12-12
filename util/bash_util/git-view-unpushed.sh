@@ -13,8 +13,8 @@ fi
 REPOS=`find "$FROM" -name '.git' `
 
 #check repo 1-by-1
-UNPUSHED_BRANCHES='' #storing result for local branches that not pushed
-UNPUSHED_COMMITS='' #storing result for local commits that not pushed
+UNPUSHED_BRANCHES=() #storing result for local branches that not pushed
+UNPUSHED_COMMITS=()  #storing result for local commits that not pushed
 function checkUnpushed() {
   REPO=$1
   s="$REPO/.." ; s=$(cd "$s" && pwd) ; REPO_FOLDER="$s"
@@ -25,7 +25,7 @@ function checkUnpushed() {
   for localBranch in ${localBranches}; do
     git config --get "branch.$localBranch.remote" | sed Q1 && \
       echo "$localBranch" && \
-      UNPUSHED_BRANCHES="$UNPUSHED_BRANCHES\n branch=$localBranch;repo=$REPO" #record found unpushed local branch
+      UNPUSHED_BRANCHES+=("branch=$localBranch;repo=$REPO") #record found unpushed local branch
   done
 
   #view unpushed commit of local repo ref. https://stackoverflow.com/a/15671218/248616
@@ -34,7 +34,7 @@ function checkUnpushed() {
     if [ "$errCode" -eq "0" ]; then #branh does exist
       commits=`git log origin/${localBranch}..${localBranch}` #view unpushed commit of local repo ref. https://stackoverflow.com/a/15671218/248616
       if [ ! -z "$commits" ]; then
-        UNPUSHED_COMMITS="$UNPUSHED_COMMITS\n repo=$REPO_FOLDER;branch=$localBranch"
+        UNPUSHED_COMMITS+=("repo=$REPO_FOLDER;branch=$localBranch")
       fi
     fi
   done
@@ -47,16 +47,14 @@ for REPO in ${REPOS}; do
 done
 
 #output printing
-UNPUSHED_BRANCHES=`printf "$UNPUSHED_BRANCHES"` #split string by new-line
 echo && echo "Found local branches" #TODO how to print length of $UNPUSHED_BRANCHES; this not working #echo && echo "Found local branches (${#UNPUSHED_BRANCHES[@]} found)"
-for f in ${UNPUSHED_BRANCHES}; do
-  echo "$f"
+for b in "${UNPUSHED_BRANCHES[@]}"; do
+  echo "$b"
 done
 
-UNPUSHED_COMMITS=`printf "$UNPUSHED_COMMITS"` #split string by new-line
 echo && echo "Found local commits" #TODO how to print length of $UNPUSHED_COMMITS; as above
-for f in ${UNPUSHED_COMMITS}; do
-  echo "$f"
+for c in "${UNPUSHED_COMMITS[@]}"; do
+  echo "$c"
 done
 
 #TODO also take care of uncommitted local changes
