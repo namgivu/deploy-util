@@ -25,7 +25,7 @@ function checkUnpushed() {
   for localBranch in ${localBranches}; do
     git config --get "branch.$localBranch.remote" | sed Q1 && \
       echo "$localBranch" && \
-      UNPUSHED_BRANCHES+=("branch=$localBranch;repo=$REPO") #record found unpushed local branch
+      UNPUSHED_BRANCHES+=("branch=$localBranch;repo=$REPO") #record found unpushed local branch - bash array ref. https://stackoverflow.com/a/1951523/248616
   done
 
   #view unpushed commit of local repo ref. https://stackoverflow.com/a/15671218/248616
@@ -34,7 +34,7 @@ function checkUnpushed() {
     if [ "$errCode" -eq "0" ]; then #branh does exist
       commits=`git log origin/${localBranch}..${localBranch}` #view unpushed commit of local repo ref. https://stackoverflow.com/a/15671218/248616
       if [ ! -z "$commits" ]; then
-        UNPUSHED_COMMITS+=("repo=$REPO_FOLDER;branch=$localBranch")
+        UNPUSHED_COMMITS+=("repo=$REPO_FOLDER;branch=$localBranch") #record found unpushed local branch - bash array ref. https://stackoverflow.com/a/1951523/248616
       fi
     fi
   done
