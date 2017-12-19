@@ -57,4 +57,5 @@ for c in "${UNPUSHED_COMMITS[@]}"; do
   echo "$c"
 done
 
+#TODO add ignored-list to skip some unwanted repo
 #TODO also take care of uncommitted local changes
