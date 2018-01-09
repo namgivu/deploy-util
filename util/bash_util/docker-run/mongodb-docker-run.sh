@@ -17,3 +17,6 @@ docker run \
   -p ${PORT}:${PORT} \
   -v ${DATA_FILE}:/data/db \
   --name ${CONTAINER_NAME} ${IMAGE}
+
+#misc util
+docker rm -f $(docker ps -qa) #clear all running containers
