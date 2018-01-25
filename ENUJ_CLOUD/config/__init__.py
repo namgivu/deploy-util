@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python
 pass
 
 
@@ -24,5 +24,5 @@ from util.python_util import *
 
 
 #load config files
-from enuj_input import *
+from .enuj_input import *
 from ENUJ_CLOUD.common import *

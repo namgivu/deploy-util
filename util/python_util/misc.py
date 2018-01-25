@@ -1,4 +1,4 @@
-from common import *
+from .common import *
 
 
 def getArg(name, options):
@@ -254,9 +254,9 @@ def runPrintedSteps(steps, headline='Running command', COLOR=DK):
     .replace(ER,'')
 
   #run it
-  print '\n{COLOR}#{headline}... BEGIN {EC}\n'.format(COLOR=COLOR,EC=EC, headline=headline)
+  print('\n{COLOR}#{headline}... BEGIN {EC}\n'.format(COLOR=COLOR,EC=EC, headline=headline) )
   run_bash(sh)
-  print '\n{COLOR}#{headline}... END   {EC}\n'.format(COLOR=COLOR,EC=EC, headline=headline)
+  print('\n{COLOR}#{headline}... END   {EC}\n'.format(COLOR=COLOR,EC=EC, headline=headline) )
 
 
 def downloadFile(url, downloadTo=None, chmod=None):

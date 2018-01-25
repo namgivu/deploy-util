@@ -1,6 +1,6 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python
 
-from common import * #initiate common asset
+from .common import * #initiate common asset
 
 USER_HOME = '~'
 GOPATH    = '%s/gows' % USER_HOME

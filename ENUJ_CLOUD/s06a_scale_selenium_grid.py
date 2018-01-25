@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python
 pass
 
 #ref. https://trello.com/c/zN2G3q86
@@ -24,10 +24,10 @@ CONTAINER_PORT = getArg('-p', options)
 SCALE_PARAMS = getArg('-s', options)
 GRID_NAME_PREFIX = getArg('-x', options) #TODO Make this as an input entry instead of param
 
-if not SELENIUM_HUB:          SELENIUM_HUB = 'selenium-hub'
+if not SELENIUM_HUB:          SELENIUM_HUB         = 'selenium-hub'
 if not SELENIUM_NODE_PREFIX:  SELENIUM_NODE_PREFIX = 'selenium-node'
-if not CONTAINER_PORT:        CONTAINER_PORT = '4444'
-if not GRID_NAME_PREFIX:      GRID_NAME_PREFIX = 'enuj'  #docker-compose container name prefix
+if not CONTAINER_PORT:        CONTAINER_PORT       = '4444'
+if not GRID_NAME_PREFIX:      GRID_NAME_PREFIX     = 'enuj'  #docker-compose container name prefix
 
 #endregion parse params
 

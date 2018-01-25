@@ -17,4 +17,4 @@ echo $scaleParam
 
 #we need param -x to set GRID_NAME_PREFIX e.g. 'nn'
 cmd="$SCRIPT_HOME/s04_CoS_grid.py -x 'nn' $scaleParam -a 1"
-eval $cmd
+eval "$cmd"

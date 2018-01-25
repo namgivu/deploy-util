@@ -1,5 +1,5 @@
-#!/usr/bin/env python2.7
-from misc import *
+#!/usr/bin/env python
+from .misc import *
 
 
 def verify_version(name):
