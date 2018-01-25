@@ -7,7 +7,7 @@ s=${BASH_SOURCE} ; s=$(dirname "$s") ; s=$(cd "$s" && pwd) ; SCRIPT_HOME=$s
 source "$SCRIPT_HOME/common.sh"
 
 #get full path of .bashrc
-bashrc=`ls ~/.bashrc`
+bashrc="$HOME/.bashrc"
 
 #add to the end of `.bashrc` a line that defines prompt `color highlight`
 echo "Updating bashrc at $bashrc..."
@@ -25,8 +25,8 @@ echo "Updating bashrc at $bashrc..."
   fi
 
   #insert `prompt format` into .bashrc
-  promptFormat="PS1='\n${debian_chroot:+($debian_chroot)}$pCL1\u@$host$pEC:$pCL2\w$pEC\n\$ '"
-  echo $promptFormat >> $bashrc
+  promptFormat="PS1='\n${debian_chroot:+($debian_chroot)}$pCL1\u@macbook$pEC:$pCL2\w$pEC\n\$ '"
+  echo "$promptFormat" >> "$bashrc"
 
 echo "Updating bashrc at $bashrc... DONE"
 
@@ -36,4 +36,8 @@ echo "Updating bashrc at $bashrc... DONE"
 echo -e "
 ${CM}You now need to re-activate your prompt ${EC}
 source $bashrc
+
+${CM}You are on Mac OS, rename .bashrc to .profile ref. https://apple.stackexchange.com/a/13014/37940 ${EC}
+p=$HOME/.profile; mv -f $bashrc \$p; source \$p
+
 "
