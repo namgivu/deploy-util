@@ -147,3 +147,5 @@ deploy_django/config/config_local*.py
 .idea/.idea/misc.xml
 .idea/.idea/modules.xml
 .idea/.idea/workspace.xml
+
+venv3/
