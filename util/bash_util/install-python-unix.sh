@@ -7,5 +7,5 @@
 #install python 3 with homebrew
 brew install python3
 
-#install virtualenv via pip3
+#install virtualenv via pip 3
 pip3 install virtualenv
