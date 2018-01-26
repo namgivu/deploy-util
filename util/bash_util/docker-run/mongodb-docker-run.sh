@@ -3,6 +3,7 @@
 : #ref. https://hub.docker.com/_/mongo/
 
 SERVICE='mongod' #ref. https://stackoverflow.com/a/11776728/248616
+                 #to see running services `service --status-all` ref. https://stackoverflow.com/a/18721237/248616
 
 REGISTRY='mongo'
 IMAGE="${REGISTRY}:latest"
