@@ -22,9 +22,10 @@ apt install -y postgresql postgresql-contrib
 #ref. https://stackoverflow.com/a/13733884/248616
 #ref. https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
 echo && which psql  && psql --version \
-            && echo "
+&& echo "
 #connect postgres by
 sudo -u postgres psql
+#full format: psql -h <host> -p <port> -U <username> -W <password> <database> #ref. https://www.postgresql.org/message-id/001f01c018c2$830133b0$64898cd5%40northlink.gr
 
 #exit command (when inside psql prompt)
 \q
