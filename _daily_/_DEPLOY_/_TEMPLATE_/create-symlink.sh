@@ -36,11 +36,11 @@ if [ -z $ROLLBACK ]; then
   #create symlink to target folder; using relative link ref. http://unix.stackexchange.com/q/10370/17671
   for f in "${FILES2LINK[@]}"
   do
-    ln -fs "../$TEMPLATE_FOLDER/$f" $TARGET_FOLDER
+    ln -fs "../$TEMPLATE_FOLDER/$f" "$TARGET_FOLDER"
   done
 
   #print ending
-    echo "
+  echo "
 Symlink created
   from $SCRIPT_HOME
   to   $TARGET_FOLDER

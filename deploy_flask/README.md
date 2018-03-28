@@ -22,7 +22,7 @@ Steps
 - Upload files/utility-assets to host
   + Upload
     * deploy utility folder
-    * github ssh key
+    * git ssh key ie. git authentication via ssh key
     
   + With each upload entry
     * sourcePath

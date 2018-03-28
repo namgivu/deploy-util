@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 #get SCRIPT_HOME=executed script's path, containing folder, cd & pwd to get container path
-s=$BASH_SOURCE ; s=$(dirname "$s") ; s=$(cd "$s" && pwd) ; SCRIPT_HOME=$s
-d="$SCRIPT_HOME/../.." ; d=$(cd "$d" && pwd) ; __DEPLOY__=$d
+s=$BASH_SOURCE ; s=$(dirname "$s") ; s=$(cd "$s" && pwd) ; SCRIPT_HOME="$s"
+d="$SCRIPT_HOME/../.." ; d=$(cd "$d" && pwd) ; _DEPLOY_="$d"
 
 #load common setting
-  source "$__DEPLOY__/common.sh"
+  source "$_DEPLOY_/common.sh"
 
 #load input(s)
   #input entry
@@ -28,21 +28,21 @@ d="$SCRIPT_HOME/../.." ; d=$(cd "$d" && pwd) ; __DEPLOY__=$d
      DM_S3="$DEPLOY_MYSQL/config/s3_key.py"
 
   #do copy input
-  sh="cp -f $COMMON_INPUT_0th  $DC_INPUT" ; eval $sh
-  sh="cp -f $INPUT_0th  $DF_INPUT" ; eval $sh #TODO replace INPUT_0th by COMMON_INPUT_0th
-  sh="cp -f $INPUT_2nd  $DM_INPUT" ; eval $sh
-  sh="cp -f $INPUT_att  $DT_INPUT" ; eval $sh
-  sh="cp -f $INPUT_rbs  $DF_RBS" ;   eval $sh
-  sh="cp -f $INPUT_rea  $DF_REA" ;   eval $sh
-  sh="cp -f $INPUT_s3k  $DM_S3" ;    eval $sh
+  sh="cp -f $COMMON_INPUT_0th  $DC_INPUT" ; eval ${sh}
+  sh="cp -f $INPUT_0th         $DF_INPUT" ; eval ${sh} #TODO replace INPUT_0th by COMMON_INPUT_0th
+  sh="cp -f $INPUT_2nd         $DM_INPUT" ; eval ${sh}
+  sh="cp -f $INPUT_att         $DT_INPUT" ; eval ${sh}
+  sh="cp -f $INPUT_rbs         $DF_RBS" ;   eval ${sh}
+  sh="cp -f $INPUT_rea         $DF_REA" ;   eval ${sh}
+  sh="cp -f $INPUT_s3k         $DM_S3" ;    eval ${sh}
 
   #do copy input
   echo 'Config loaded'
-  ls -d $DC_INPUT
-  ls -d $DF_INPUT
-  ls -d $DF_RBS
-  ls -d $DF_REA
-  ls -d $DM_INPUT
-  ls -d $DM_S3
-  ls -d $DT_INPUT
+  ls -d "$DC_INPUT"
+  ls -d "$DF_INPUT"
+  ls -d "$DF_RBS"
+  ls -d "$DF_REA"
+  ls -d "$DM_INPUT"
+  ls -d "$DM_S3"
+  ls -d "$DT_INPUT"
   echo
