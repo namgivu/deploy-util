@@ -1,1 +1,0 @@
-The SSH keys of those docker-ssh containers are stored here
