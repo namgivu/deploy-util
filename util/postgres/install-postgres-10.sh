@@ -43,8 +43,6 @@ sudo apt-get install -y postgresql-10
 #confirm version
 psql -c 'SELECT version();'
 
-
-
 ## RUN MANUALLY ##
 
 #config to login with username+password ref. https://stackoverflow.com/a/26735105/248616
@@ -70,13 +68,18 @@ local   all             postgres                                trust
         #full detail ref. https://www.postgresql.org/docs/9.3/static/auth-methods.html
 
     #ensure we setup psql connection password ref. https://stackoverflow.com/a/6405162/248616
-    POSTGRES_PORT='5432'         #same as defined in docker-compose.yml
-    POSTGRES_USER='postgres'     #same as defined in docker-compose.yml
-    POSTGRES_PASSWORD='postgres' #same as defined in docker-compose.yml
-    echo "localhost:$POSTGRES_PORT:*:$POSTGRES_USER:$POSTGRES_PASSWORD" >> "$HOME/.pgpass" #TODO script to remove duplicated+continuous lines
+    POSTGRES_HOST='localhost'    #your value may differ when using docker
+    POSTGRES_PORT='5432'         #your value may differ when using docker
+    POSTGRES_USER='postgres'     #your value may differ when using docker
+    POSTGRES_PASSWORD='postgres' #your value may differ when using docker
+    echo "$POSTGRES_HOST:$POSTGRES_PORT:*:$POSTGRES_USER:$POSTGRES_PASSWORD" >> "$HOME/.pgpass" #TODO script to remove duplicated+continuous lines
 
     #(optional) create role+user same as user on local machine
     username="$USER"
     psql -U postgres -c "CREATE ROLE $username SUPERUSER LOGIN REPLICATION CREATEDB CREATEROLE;"
     psql -U postgres -c "ALTER USER $username with password 'namgivu';" #set password in case we need to connect via md5/user+pass
     psql -U postgres -c "CREATE DATABASE namgivu OWNER $username;"
+
+    #confirm working
+    #psql -h $POSTGRES_HOST -U $POSTGRES_USER -p $POSTGRES_PORT -c 'SELECT version();'
+    psql -h localhost -p 54322 -U postgres -c 'SELECT version();'
