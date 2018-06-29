@@ -150,3 +150,5 @@ deploy_django/config/config_local*.py
 .idea/.idea/dictionaries/
 
 venv3/
+.idea/dictionaries/
+.idea/other.xml
